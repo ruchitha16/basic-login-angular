@@ -23,13 +23,13 @@ export class ItemsListComponent implements OnInit {
   ngOnInit() {
     this.items$  = this.itemsService.items$;
     }
-    private back(){
+     back(){
       this._location.back();
     }
-    private logout(){
+     logout(){
       this.router.navigate(['/login']);
     }
-    private addItem(){
+     addItem(){
       this.router.navigate(['/add']);
     }
 

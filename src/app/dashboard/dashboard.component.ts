@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   deleteItem(){
     this.router.navigate(['/delete']);
   }
-  private logout(){
+   logout(){
     this.router.navigate(['/login'])
   }
 }

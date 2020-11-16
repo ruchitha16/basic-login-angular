@@ -85,13 +85,13 @@ export class ItemAddEditComponent implements OnInit {
       id: new FormControl(this.item ? this.item.id : null),
     });
   }
-private back(){
+ back(){
   this._location.back();
 }
-private logout(){
+ logout(){
   this.router.navigate(['/login']);
 }
-private view(){
+ view(){
   this.router.navigate(['/view']);
 }
 }
