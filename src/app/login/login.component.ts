@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
 
   processing: Boolean = false;
   error: Boolean = false;
+  userid:string ="ruchitha@test.com";
+  passwordid:string = "Testing@123";
 
   checkField  = CheckRequiredField;
 
@@ -43,8 +45,18 @@ export class LoginComponent implements OnInit {
     this.error  = false;
     this.processing  = false;
     if (this.loginForm.valid) {
-      this.login();
+     let formUser:String=(this.loginForm.controls["username"].value);
+     let formPassword:String=(this.loginForm.controls["password"].value);
+     this.processing=true;
+       if((formUser===(this.userid))&&(formPassword===(this.passwordid)))
+       {
+          this.handleLoginSuccess();
+       }
+       else{
+        this.handleLoginError();
+       }
     }
+    
   }
 
   private login() {

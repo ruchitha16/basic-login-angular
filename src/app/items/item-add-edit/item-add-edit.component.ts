@@ -2,9 +2,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Validators, AbstractControl, FormBuilder, FormGroup, FormControl , Validator , FormsModule} from '@angular/forms';
 import { Observable, Subject , Subscription, BehaviorSubject } from 'rxjs';
 import { CheckRequiredField } from '../../_shared/helpers/form.helper';
-
+import { Router } from '@angular/router';
 import { ItemsService } from '../_services/items.service';
 import { ItemModel } from '../_models/item.model';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-item-add-edit',
@@ -23,7 +24,9 @@ export class ItemAddEditComponent implements OnInit {
   checkField  = CheckRequiredField;
 
   constructor(
-    private itemsService: ItemsService
+    private itemsService: ItemsService,
+    private router:Router,
+    private _location: Location,
   ) { }
 
   ngOnInit() {
@@ -82,5 +85,13 @@ export class ItemAddEditComponent implements OnInit {
       id: new FormControl(this.item ? this.item.id : null),
     });
   }
-
+private back(){
+  this._location.back();
+}
+private logout(){
+  this.router.navigate(['/login']);
+}
+private view(){
+  this.router.navigate(['/view']);
+}
 }

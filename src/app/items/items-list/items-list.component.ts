@@ -3,7 +3,8 @@ import { Observable, Subject,throwError, of , BehaviorSubject} from 'rxjs';
 
 import { ItemsService } from '../_services/items.service';
 import { ItemModel } from '../_models/item.model';
-
+import {Location} from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-items-list',
   templateUrl: './items-list.component.html',
@@ -14,11 +15,22 @@ export class ItemsListComponent implements OnInit {
   items$: BehaviorSubject<ItemModel[]>;
 
   constructor(
-    private itemsService: ItemsService
+    private itemsService: ItemsService,
+    private router:Router,
+    private _location: Location,
   ) { }
 
   ngOnInit() {
     this.items$  = this.itemsService.items$;
-  }
+    }
+    private back(){
+      this._location.back();
+    }
+    private logout(){
+      this.router.navigate(['/login']);
+    }
+    private addItem(){
+      this.router.navigate(['/add']);
+    }
 
 }
