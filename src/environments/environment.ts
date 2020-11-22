@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  apiBaseUrl : 'https://basic-login-angular.vercel.app',
+  apiBaseUrl : 'https://basic-login-angular.vercel.app/api/item',
   env : 'local'
 };
 

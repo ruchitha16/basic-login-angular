@@ -15,12 +15,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return of(null).pipe(mergeMap(() => {
 
-            const auth    = request.headers.get('Authorization');
+           // const auth    = request.headers.get('Authorization');
 
             // Items list
             if (request.url.endsWith(   '/api/items') && request.method === 'GET') {
 
-                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' ' + auth);
+                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' ' );
 
                 const body = {
                     result : [
@@ -67,7 +67,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             // Add item
             if (request.url.endsWith('/api/item') && request.method === 'POST') {
 
-                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' ' + auth);
+                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' '    );
 
                 const bodyPosted    = request.body;
                 const random    = (Math.floor(Math.random() * Math.floor(1000)) + 1);
@@ -83,7 +83,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             // Update item
             if (request.url.startsWith('/api/item') && request.method === 'PUT') {
 
-                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' ' + auth);
+                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' '    );
 
                 const bodyPosted    = request.body;
 
@@ -96,7 +96,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             // Delete item
             if (request.url.startsWith('/api/item/') && request.method === 'DELETE') {
-                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' ' + auth);
+                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' '    );
                 const body = {
                     success : true
                 };
@@ -107,7 +107,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             // LOGIN
             if (request.url.endsWith('/api/auth/login') && request.method === 'POST') {
 
-                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' ' + auth);
+                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' '    );
 
                 const random    = (Math.floor(Math.random() * Math.floor(40)) % 4);
                 const bodyPosted    = request.body;
@@ -130,7 +130,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             // LOGOUT
             if (request.url.endsWith('/api/auth/logout') && request.method === 'GET') {
-                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' ' + auth);
+                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' '    );
                 const body = {
                   success : true
                 };
@@ -139,7 +139,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             // VALIDATE TOKEN
             if (request.url.endsWith('/api/auth/validate-token') && request.method === 'GET') {
-                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' ' + auth);
+                console.log('[ intercepting ] ' + request.method + ' : ' + request.url + ' '    );
                 const body = {
                     user : {
                         fullname : this.fullName,
