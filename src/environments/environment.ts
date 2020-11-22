@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  apiBaseUrl : 'https://basic-login-angular.vercel.app/api/item',
+  production: false,
+  apiBaseUrl : '',
   env : 'local'
 };
 
