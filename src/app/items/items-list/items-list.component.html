@@ -1,6 +1,6 @@
 
- <button (click)="logout()" style="width: 10%; float: right;" class="btn btn-outline-dark">LogOut</button>
- <button (click)="back()" style="width: 10%; float: right;" class="btn btn-outline-dark mr-3">Back</button>
+ <button (click)="logout()" style="width: 10%; float: right;" id="logout" class="btn btn-outline-dark">LogOut</button>
+ <button (click)="back()" style="width: 10%; float: right;" id="back" class="btn btn-outline-dark mr-3">Back</button>
 <br><br><br>
 <ul class="list-group" *ngIf="items$ | async as items;">
   <div *ngIf="items.length==0">
@@ -9,6 +9,6 @@
   <app-items-list-item  *ngFor="let item of items" [item]="item"></app-items-list-item>
   <br><br>
   
-  <button class="btn btn-primary mr-3" (click)="addItem()" style="border: 40; width: 25%; margin-left: 600px; border-color: black;">Add Item?</button>
+  <button class="btn btn-primary mr-3" id="addItem" style="border: 40; width: 25%; margin-left: 600px; border-color: black;">Add Item?</button>
 
 </ul>

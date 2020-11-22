@@ -1,6 +1,6 @@
 
-     <button (click)="logout()" style="width: 10%; float: right;" class="btn btn-outline-dark">LogOut</button>
-    <button (click)="back()" style="width: 10%; float: right;" class="btn btn-outline-dark mr-3">Back</button>
+     <button (click)="logout()" style="width: 10%; float: right;" id="logout" class="btn btn-outline-dark">LogOut</button>
+    <button (click)="back()" style="width: 10%; float: right;" id="back" class="btn btn-outline-dark mr-3">Back</button>
    
     <br><br><br><br>
     <h3>Add Item</h3>
@@ -20,7 +20,7 @@
         Please wait..
     </p>
 
-    <button style="width: 30%;" *ngIf="!isProcessing" type="button" class="btn btn-outline-dark btn-block submitbutton" (click)="onSubmit($event)" [disabled]="!itemForm.valid && !isProcessing">{{getButtonText()}}</button>
+    <button style="width: 30%;" *ngIf="!isProcessing" id="status" type="button" class="btn btn-outline-dark btn-block submitbutton" (click)="onSubmit($event)" [disabled]="!itemForm.valid && !isProcessing">{{getButtonText()}}</button>
     <br>
-    <button style="width: 30%;" class="btn btn-outline-dark btn-block1"(click)="view()">View</button>
+    <button style="width: 30%;" id="view" class="btn btn-outline-dark btn-block1"(click)="view()">View</button>
 </form>
